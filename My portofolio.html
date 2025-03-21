@@ -1,0 +1,153 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio Personnel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <p>Découvrez mes compétences, projets et intérêts personnels !</p>
+    </section>
+
+    <section id="about">
+        <h1>À propos de moi</h1>
+        <p>Je suis un développeur passionné par la création d'applications modernes et élégantes. Nous avons été formé à DCLIC.</p>
+    </section>
+
+    <section id="skills">
+        <h1>Mes Compétences</h1>
+        <ul>
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Développement Web</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h1>Mes Projets</h1>
+        <p>Voici quelques-uns de mes projets récents :</p>
+        <ul>
+            <li>Projet 1 - Site Web personnel</li>
+            <li>Projet 2 - Application JavaScript interactive</li>
+            <li>Projet 3 - Interface utilisateur moderne</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h1>Contactez-moi</h1>
+        <form id="contactForm">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="message">Message :</label><br>
+            <textarea id="message" name="message"></textarea><br><br>
+
+            <input type="submit" value="Envoyer">
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Akouègnon Christophe KOTOUNOU. Tous droits réservés.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+<!-- styles.css -->
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    scroll-behavior: smooth;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    animation: fadeIn 0.6s;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+<!-- scripts.js -->
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+            alert('Veuillez remplir tous les champs.');
+            return;
+        }
+
+        alert('Merci ' + name + '! Votre message a bien été envoyé.');
+
+        form.reset();
+    });
+});
